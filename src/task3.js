@@ -1,3 +1,4 @@
+var task3 = sortedTriangles; 
 function sortTriangles(triangles) {
     function calculateTriangleArea(a, b, c) {
         var p = (a + b + c) / 2;

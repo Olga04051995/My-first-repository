@@ -1,3 +1,4 @@
+var task2 = analyzeEnvelopes; 
 function analyzeEnvelopes(envelope1, envelope2) {
     var result = 0;
 

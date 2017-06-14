@@ -1,3 +1,4 @@
+var task7 = fibonacci; 
 function fibonacci(context) {
     var a = 1,
         b = 0,
