@@ -1,3 +1,4 @@
+var task6 = numericSequence; 
 function numericSequence(length, minSquare) {
     var array = [];
 

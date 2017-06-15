@@ -1,3 +1,4 @@
+var task5 = luckyTickets; 
 function luckyTickets(context) {
     var result = { easyMethod: 0, complexMethod: 0, winner: "" };
     if(context.min.length != 6 || context.max.length != 6){
