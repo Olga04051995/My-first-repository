@@ -1,31 +1,52 @@
-var task5 = luckyTickets; 
+'use strict';
+let task5 = luckyTickets;
+
 function luckyTickets(context) {
-    var result = { easyMethod: 0, complexMethod: 0, winner: "" };
-    if(context.min.length != 6 || context.max.length != 6){
-        throw new Error("min and max value length have to be equal to six symbols");
+    if (context.min.length != 6 || context.max.length != 6) {
+        throw new Error('Min and max value length have to be equal to six symbols');
     }
+
+    let result = {};
+    result[easyMethod.name] = 0;
+    result[complexMethod.name] = 0;
+
     context.min = Number(context.min);
     context.max = Number(context.max);
-    if(context.min > context.max){
-        throw new Error("min value has to be less then max value");
-    }; 
-    var easyMethod = function (value) {
-        var first3Numbers = value.slice(0, 3);
-        var last3Numbers = value.slice(-3);
 
-        if (sumOfStringNumbers(first3Numbers) === sumOfStringNumbers(last3Numbers)) {
-            return true;
-        }
-
-        return false;
+    if (context.min > context.max) {
+        throw new Error('min value has to be less then max value');
     }
 
-    var complexMethod = function (value) {
-        var evenSum = 0,
+    for (let i = context.min; i < context.max; i++) {
+        let value = i.toString();
+
+        if (easyMethod(value)) {
+            result[easyMethod.name]++;
+        }
+
+        if (complexMethod(value)) {
+            result[complexMethod.name]++;
+        }
+    }
+
+    result['winner'] = result[complexMethod.name] > result[easyMethod.name] ? complexMethod.name : easyMethod.name;
+
+    return result;
+
+    function easyMethod(value) {
+        let first3Numbers = value.slice(0, 3),
+            last3Numbers = value.slice(-3);
+
+        return sumOfStringNumbers(first3Numbers) === sumOfStringNumbers(last3Numbers);
+    }
+
+    function complexMethod(value) {
+        let evenSum = 0,
             oddSum = 0;
 
-        for (var i = 0; i < value.length; i++) {
-            var number = Number(value[i]);
+        for (let i = 0; i < value.length; i++) {
+            let number = Number(value[i]);
+
             if (isEven(number)) {
                 evenSum += number;
             } else {
@@ -35,33 +56,12 @@ function luckyTickets(context) {
 
         return evenSum === oddSum;
     }
-
-    for (var i = context.min; i < context.max; i++) {
-        var value = i.toString();
-
-        if (easyMethod(value)) {
-
-            result["easyMethod"]++;
-        }
-
-        if (complexMethod(value)) {
-            result["complexMethod"]++;
-        }
-    }
-
-    if (result["complexMethod"] > result["easyMethod"]) {
-        result.winner = "complexMethod";
-    } else {
-        result.winner = "easyMethod";
-    }
-
-    return result;
 }
 
 function sumOfStringNumbers(str) {
-    var sum = 0;
+    let sum = 0;
 
-    for (var i = 0; i < str.length; i++) {
+    for (let i = 0; i < str.length; i++) {
         sum += Number(str[i]);
     }
 

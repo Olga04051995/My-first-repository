@@ -1,12 +1,14 @@
-var task6 = numericSequence; 
+'use strict'; 
+let task6 = numericSequence; 
 function numericSequence(length, minSquare) {
-    var array = [];
+    let array = [],
+    	i = 0;
 
-    for (var i = 0; i < length; i++) {
+    for ( i ; i < length; i++) {
         if (Math.pow(i, 2) >= minSquare) {
             array.push(i);
         }
     }
 
-    return array.join(",");
+    return array.join(',');
 }

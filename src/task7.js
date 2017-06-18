@@ -1,8 +1,10 @@
-var task7 = fibonacci; 
+'use strict'; 
+let task7 = fibonacci; 
 function fibonacci(context) {
-    var a = 1,
+    let a = 1,
         b = 0,
-        temp, result = [];
+        temp, 
+        result = [];
 
     while (b <= context.max) {
         temp = a;
