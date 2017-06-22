@@ -1,18 +1,29 @@
 'use strict'; 
-let task3 = sortTriangles; 
+function task3 (triangles) {
+    let result = 0;
+
+    try{
+        preValidateTask3(triangles);
+        result = sortTriangles(triangles);
+    } catch (ex) {
+        console.log({status: "failed", reason: ex.message});
+    }  
+
+    return result;
+}
+
+function preValidateTask3 (triangles) {
+    if (!(triangles instanceof Array)) {
+        throw new Error ('Entered argument should be array type')
+    } 
+}
+
 function sortTriangles (triangles) {
-    let sortedTriangles = [],
-        firstElementArea = 0,
-        secondElementArea = 0;
+    let sortedTriangles = [];
 
-    function calculateTriangleArea (a, b, c) {
-        let p = (a + b + c) / 2;
-        return Math.sqrt (p * (p - a) * (p - b) * (p - c));
-    }
-
-    sortedTriangles = triangles.sort(function (firstElement, secondElement) {
-        firstElementArea = calculateTriangleArea(firstElement.a, firstElement.b, firstElement.c);
-        secondElementArea = calculateTriangleArea(secondElement.a, secondElement.b, secondElement.c);
+    sortedTriangles = triangles.sort (function (firstElement, secondElement) {
+        let firstElementArea = calculateTriangleArea(firstElement.a, firstElement.b, firstElement.c);
+        let secondElementArea = calculateTriangleArea(secondElement.a, secondElement.b, secondElement.c);
 
         if (firstElementArea < secondElementArea) {
             return 1;
@@ -29,4 +40,9 @@ function sortTriangles (triangles) {
     	return element.vertices;
     });
 
+    function calculateTriangleArea (a, b, c) {
+        let p = (a + b + c) / 2;
+
+        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
+    }
 }

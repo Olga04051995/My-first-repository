@@ -1,23 +1,39 @@
 'use strict';
-let task5 = luckyTickets;
+function task5 (context) {
+    let result = 0;
 
-function luckyTickets(context) {
+    try{
+        preValidateTask5(context);
+        result = luckyTickets(context);
+    } catch (ex) {
+        console.log({status: "failed", reason: ex.message});
+    }  
+
+    return result;
+} 
+
+function preValidateTask5 (context) {
+    let min = Number(context.min),
+        max = Number(context.max);
+
     if (context.min.length != 6 || context.max.length != 6) {
         throw new Error('Min and max value length have to be equal to six symbols');
     }
 
-    let result = {};
+    if (min > max) {
+        throw new Error('min value has to be less then max value');
+    }
+}
+
+function luckyTickets(context) {
+    let result = {},
+        min = Number(context.min),
+        max = Number(context.max);
+
     result[easyMethod.name] = 0;
     result[complexMethod.name] = 0;
 
-    context.min = Number(context.min);
-    context.max = Number(context.max);
-
-    if (context.min > context.max) {
-        throw new Error('min value has to be less then max value');
-    }
-
-    for (let i = context.min; i < context.max; i++) {
+    for (let i = min; i < max; i++) {
         let value = i.toString();
 
         if (easyMethod(value)) {
