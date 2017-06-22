@@ -2,7 +2,7 @@
 function task3 (triangles) {
     let result = 0;
 
-    try{
+    try {
         preValidateTask3(triangles);
         result = sortTriangles(triangles);
     } catch (ex) {
@@ -14,7 +14,7 @@ function task3 (triangles) {
 
 function preValidateTask3 (triangles) {
     if (!(triangles instanceof Array)) {
-        throw new Error ('Entered argument should be array type')
+        throw new Error('Entered argument should be array type')
     } 
 }
 

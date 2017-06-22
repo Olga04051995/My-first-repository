@@ -15,11 +15,11 @@ function task2 (envelope1, envelope2) {
 
 function preValidateTask2 (envelope1, envelope2) {
     if (typeof envelope1 !== 'object' ||  typeof envelope1 !== 'object') {
-        throw new Error ('Entered params should be object type')
+        throw new Error('Entered params should be object type')
     }
 
     if (envelope1.a <= 0 || envelope1.b <= 0 || envelope2.c <= 0 || envelope2.d <= 0) {
-        throw new Error ('Propertes of objects should be more then zero')
+        throw new Error('Propertes of objects should be more then zero')
     }
 }
 

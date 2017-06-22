@@ -2,7 +2,7 @@
 function task6 (length, minSquare) {
     let result = 0;
 
-    try{
+    try {
         preValidateTask6(length, minSquare);
         result = numericSequence(length, minSquare);
     } catch (ex) {
@@ -14,11 +14,11 @@ function task6 (length, minSquare) {
 
 function preValidateTask6 (length, minSquare) {
 	if (isNaN(length) || isNaN(minSquare)) {
-        throw new Error ('Entered argument should be number type')
+        throw new Error('Entered argument should be number type')
     } 
 }
 
-function numericSequence(length, minSquare) {
+function numericSequence (length, minSquare) {
     let array = [],
     	i = 0;
 

@@ -2,7 +2,7 @@
 function task1 (length, height, char) {
     let result = 0;
 
-    try{
+    try {
         preValidateTask1(length, height, char);
         result = createChessboard(length, height, char);
     } catch (ex) {
@@ -14,7 +14,7 @@ function task1 (length, height, char) {
 
 function preValidateTask1 (length, height, char) {
     if (isNaN(length) || isNaN(height) ||  typeof char !== 'string') {
-        throw new Error ('Entered params length and height should be number types and char should be string ')
+        throw new Error('Entered params length and height should be number types and char should be string ')
     }
 }
 

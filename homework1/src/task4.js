@@ -14,7 +14,11 @@ function task4 (number) {
 
 function preValidateTask4 (number) {
     if (isNaN(number)) {
+<<<<<<< HEAD:src/task4.js
+        throw new Error('Entered argument should be number type')
+=======
         throw new Error ('Entered argument should be number type')
+>>>>>>> 7f32c516c6d34d353a0cbab63ca3ddde25ff12b1:homework1/src/task4.js
     } 
 }
 

@@ -2,7 +2,7 @@
 function task7 (context) {
     let result = 0;
 
-    try{
+    try {
         preValidateTask7(context);
         result = getFibonacciSequences(context);
     } catch (ex) {
@@ -14,7 +14,7 @@ function task7 (context) {
 
 function preValidateTask7 (context) {
     if (context.min > context.max) {
-        throw new Error('min value has to be less then max value');
+        throw new Error('Min value has to be less then max value');
     }
 }
 

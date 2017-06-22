@@ -2,7 +2,11 @@
 function task5 (context) {
     let result = 0;
 
+<<<<<<< HEAD:src/task5.js
+    try {
+=======
     try{
+>>>>>>> 7f32c516c6d34d353a0cbab63ca3ddde25ff12b1:homework1/src/task5.js
         preValidateTask5(context);
         result = luckyTickets(context);
     } catch (ex) {
@@ -21,11 +25,19 @@ function preValidateTask5 (context) {
     }
 
     if (min > max) {
+<<<<<<< HEAD:src/task5.js
+        throw new Error('Min value has to be less then max value');
+    }
+}
+
+function luckyTickets (context) {
+=======
         throw new Error('min value has to be less then max value');
     }
 }
 
 function luckyTickets(context) {
+>>>>>>> 7f32c516c6d34d353a0cbab63ca3ddde25ff12b1:homework1/src/task5.js
     let result = {},
         min = Number(context.min),
         max = Number(context.max);
@@ -49,14 +61,14 @@ function luckyTickets(context) {
 
     return result;
 
-    function easyMethod(value) {
+    function easyMethod (value) {
         let first3Numbers = value.slice(0, 3),
             last3Numbers = value.slice(-3);
 
         return sumOfStringNumbers(first3Numbers) === sumOfStringNumbers(last3Numbers);
     }
 
-    function complexMethod(value) {
+    function complexMethod (value) {
         let evenSum = 0,
             oddSum = 0;
 
@@ -74,7 +86,7 @@ function luckyTickets(context) {
     }
 }
 
-function sumOfStringNumbers(str) {
+function sumOfStringNumbers (str) {
     let sum = 0;
 
     for (let i = 0; i < str.length; i++) {
@@ -84,6 +96,6 @@ function sumOfStringNumbers(str) {
     return sum;
 }
 
-function isEven(n) {
+function isEven (n) {
     return n % 2 == 0;
 }
