@@ -2,11 +2,7 @@
 function task5 (context) {
     let result = 0;
 
-<<<<<<< HEAD:src/task5.js
     try {
-=======
-    try{
->>>>>>> 7f32c516c6d34d353a0cbab63ca3ddde25ff12b1:homework1/src/task5.js
         preValidateTask5(context);
         result = luckyTickets(context);
     } catch (ex) {
@@ -25,19 +21,16 @@ function preValidateTask5 (context) {
     }
 
     if (min > max) {
-<<<<<<< HEAD:src/task5.js
         throw new Error('Min value has to be less then max value');
     }
 }
 
 function luckyTickets (context) {
-=======
         throw new Error('min value has to be less then max value');
     }
 }
 
 function luckyTickets(context) {
->>>>>>> 7f32c516c6d34d353a0cbab63ca3ddde25ff12b1:homework1/src/task5.js
     let result = {},
         min = Number(context.min),
         max = Number(context.max);
