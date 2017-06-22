@@ -25,13 +25,13 @@ function preValidateTask2 (envelope1, envelope2) {
 
 
 function analyzeEnvelopes (envelope1, envelope2) {
-    let FirstSmaller = isFirstSmaller(envelope1, envelope2),
-        SecondSmaller = isSecondSmaller(envelope1, envelope2),
+    let firstSmaller = isFirstSmaller(envelope1, envelope2),
+        secondSmaller = isSecondSmaller(envelope1, envelope2),
         result = 0; 
 
-    if (FirstSmaller) {
+    if (firstSmaller) {
         result = 1;
-    } else if (SecondSmaller) {
+    } else if (secondSmaller) {
         result = 2;
     }
 

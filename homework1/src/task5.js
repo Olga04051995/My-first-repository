@@ -25,11 +25,6 @@ function preValidateTask5 (context) {
     }
 }
 
-function luckyTickets (context) {
-        throw new Error('min value has to be less then max value');
-    }
-}
-
 function luckyTickets(context) {
     let result = {},
         min = Number(context.min),
