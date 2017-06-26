@@ -1,4 +1,5 @@
 'use strict';
+
 function task5 (context) {
     let result = 0;
 
@@ -48,30 +49,30 @@ function luckyTickets(context) {
     result['winner'] = result[complexMethod.name] > result[easyMethod.name] ? complexMethod.name : easyMethod.name;
 
     return result;
+}
 
-    function easyMethod (value) {
-        let first3Numbers = value.slice(0, 3),
-            last3Numbers = value.slice(-3);
+function easyMethod (value) {
+    let first3Numbers = value.slice(0, 3),
+        last3Numbers = value.slice(-3);
 
-        return sumOfStringNumbers(first3Numbers) === sumOfStringNumbers(last3Numbers);
+    return sumOfStringNumbers(first3Numbers) === sumOfStringNumbers(last3Numbers);
     }
 
-    function complexMethod (value) {
-        let evenSum = 0,
-            oddSum = 0;
+function complexMethod (value) {
+    let evenSum = 0,
+        oddSum = 0;
 
-        for (let i = 0; i < value.length; i++) {
-            let number = Number(value[i]);
+    for (let i = 0; i < value.length; i++) {
+        let number = Number(value[i]);
 
-            if (isEven(number)) {
-                evenSum += number;
-            } else {
-                oddSum += number;
-            }
+        if (isEven(number)) {
+            evenSum += number;
+        } else {
+            oddSum += number;
         }
-
-        return evenSum === oddSum;
     }
+
+    return evenSum === oddSum;
 }
 
 function sumOfStringNumbers (str) {

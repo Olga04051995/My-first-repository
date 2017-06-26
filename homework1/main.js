@@ -4,7 +4,7 @@
 
     // task2
     console.log("Analyze envelopes");
-    console.log(task2({ a: 3, b: 4 }, { c: 2, d: 3 }));
+    console.log(task2({ a: 3, b: 4 }, { a: 2, b: 3 }));
 
     // task3
     var triangle1 = { vertices: "CDE", a: 4, b: 6, c: 3 };

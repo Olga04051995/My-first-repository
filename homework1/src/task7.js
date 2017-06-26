@@ -1,4 +1,5 @@
 'use strict'; 
+
 function task7 (context) {
     let result = 0;
 

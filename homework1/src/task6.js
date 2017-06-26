@@ -1,4 +1,5 @@
 'use strict'; 
+
 function task6 (length, minSquare) {
     let result = 0;
 

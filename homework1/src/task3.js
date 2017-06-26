@@ -1,4 +1,5 @@
 'use strict'; 
+
 function task3 (triangles) {
     let result = 0;
 
@@ -21,28 +22,20 @@ function preValidateTask3 (triangles) {
 function sortTriangles (triangles) {
     let sortedTriangles = [];
 
-    sortedTriangles = triangles.sort (function (firstElement, secondElement) {
-        let firstElementArea = calculateTriangleArea(firstElement.a, firstElement.b, firstElement.c);
-        let secondElementArea = calculateTriangleArea(secondElement.a, secondElement.b, secondElement.c);
+    sortedTriangles = triangles.sort (function (first, second) {
+        let firstArea = calculateTriangleArea(first.a, first.b, first.c),
+            secondArea = calculateTriangleArea(second.a, second.b, second.c);
 
-        if (firstElementArea < secondElementArea) {
-            return 1;
-        }
-
-        if (firstElementArea > secondElementArea) {
-            return -1;
-        }
-
-        return 0;
+        return firstArea - secondArea;
     });
 
     return sortedTriangles.map(function (element) {
     	return element.vertices;
     });
+}
 
-    function calculateTriangleArea (a, b, c) {
+function calculateTriangleArea (a, b, c) {
         let p = (a + b + c) / 2;
 
         return Math.sqrt(p * (p - a) * (p - b) * (p - c));
     }
-}

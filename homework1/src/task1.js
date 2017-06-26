@@ -1,4 +1,5 @@
 'use strict'; 
+
 function task1 (length, height, char) {
     let result = 0;
 

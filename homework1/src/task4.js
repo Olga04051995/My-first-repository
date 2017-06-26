@@ -1,4 +1,5 @@
 'use strict';
+
 function task4 (number) {
     let result = 0;
 
