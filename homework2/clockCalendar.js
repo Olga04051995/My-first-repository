@@ -1,17 +1,20 @@
-'use strict';
+'use srtict';
 
 document.addEventListener('DOMContentLoaded', init, false);
 function init () {
-    let clockFormat = 'HH:MM',
-        calendarFormat = 'MM/DD/YY',
+    let calendarFormat = 'MM/DD/YY',
         currentState = 'clock',
+        clockFormat = 'HH:MM',
+        currentValue,
+        container;
+
         container = document.querySelector('.clock-calendar');
 
     container.addEventListener ('contextmenu', function (event) {
         event.preventDefault();
         currentState = currentState === 'clock' ? 'calendar' : 'clock';
-
-        container.innerHTML = getClockCalendarValue(currentState, clockFormat, calendarFormat);
+        
+        updateClockCalendarValue();
     });
 
     container.addEventListener ('click', function (event) {
@@ -21,7 +24,7 @@ function init () {
             calendarFormat = calendarFormat === 'MM/DD/YY' ? 'DD.MM.YYYY' : 'MM/DD/YY';
         }
 
-        container.innerHTML = getClockCalendarValue(currentState, clockFormat, calendarFormat);
+        updateClockCalendarValue();
     });
 
     container.addEventListener ('mouseover', function (event) {
@@ -33,10 +36,14 @@ function init () {
     });
 
     function updateClockCalendarValue () {
-        container.innerHTML = getClockCalendarValue(currentState, clockFormat, calendarFormat);
+        currentValue = getClockCalendarValue(currentState, clockFormat, calendarFormat);
+
+        if (currentValue !== container.innerHTML) {
+            container.innerHTML = currentValue;
+        }    
     }
 
     updateClockCalendarValue();
+
     setInterval(updateClockCalendarValue, 1000);
 }
-

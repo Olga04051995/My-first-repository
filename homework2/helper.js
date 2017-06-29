@@ -1,5 +1,13 @@
 'use strict';
 
+function updateClockCalendarValue (currentValue, container, currentState, clockFormat, calendarFormat) {
+        currentValue = getClockCalendarValue(currentState, clockFormat, calendarFormat);
+
+        if (currentValue !== container.innerHTML) {
+        container.innerHTML = currentValue;
+    }
+}
+
 function getClockCalendarValue (currentState, clockFormat, calendarFormat) {
 	let result;
 

@@ -1,24 +1,29 @@
 'use strict';
 
 function task5 (context) {
-    let result = 0;
+    let result = 0,
+        min = Number(context.min),
+        max = Number(context.max);
+
 
     try {
-        preValidateTask5(context);
-        result = luckyTickets(context);
+        preValidateTask5(context, min, max);
+        result = luckyTickets(min, max);
     } catch (ex) {
-        console.log({status: "failed", reason: ex.message});
+        console.log({status: 'failed', reason: ex.message});
     }  
 
     return result;
 } 
 
-function preValidateTask5 (context) {
-    let min = Number(context.min),
-        max = Number(context.max);
-
+function preValidateTask5 (context, min, max) {
+    
     if (context.min.length != 6 || context.max.length != 6) {
         throw new Error('Min and max value length have to be equal to six symbols');
+    }
+
+    if (isNaN(min) || isNaN(max)) {
+        throw new Error('Min and max value are not nambers');
     }
 
     if (min > max) {
@@ -26,10 +31,8 @@ function preValidateTask5 (context) {
     }
 }
 
-function luckyTickets(context) {
-    let result = {},
-        min = Number(context.min),
-        max = Number(context.max);
+function luckyTickets(min, max) {
+    let result = {};
 
     result[easyMethod.name] = 0;
     result[complexMethod.name] = 0;
