@@ -1,0 +1,26 @@
+ul {
+	font-family: "Trebuchet MS", "Lucida Sans";
+	padding: 7px 20px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	box-shadow: 2px -2px 5px 0 rgba(0,0,0,.1),
+     	-2px -2px 5px 0 rgba(0,0,0,.1),
+    	2px 2px 5px 0 rgba(0,0,0,.1),
+    	-2px 2px 5px 0 rgba(0,0,0,.1);
+	font-size: 190%;
+	letter-spacing: 2px;
+	width: 300px;
+	text-align: center;
+}
+
+.allCats {
+	border-left: 10px solid #f05d22; 
+}
+
+.petsAvaragePrice {
+	border-left: 10px solid #8bc63e; 
+}
+
+.whiteFlaffyPets {
+	border-left: 10px solid #1ccfc9; 
+}
