@@ -25,7 +25,7 @@ class PetShop {
 
   getFluffyAndWhite() {
     return this.petList.filter((value) => {
-      return value.hasOwnProperty('isFlaffy') && value['isFlaffy'] === 'true' || value.color === 'white';
+      return value.whiteOrFluffy();
     });
   }
 

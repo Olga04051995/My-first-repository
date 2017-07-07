@@ -68,6 +68,8 @@ class Model {
         } else if (this.currentState === 'calendar') {
         	this.currentState = 'clock';
         }
+
+        this.updateClockCalendarValue ();
     }
 
     onClick (event) {
@@ -76,7 +78,9 @@ class Model {
            	this.clockFormat = this.clockFormat === 'HH:MM' ? 'HH:MM:SS' : 'HH:MM';
         } else if (this.currentState === 'calendar') {
            	this.calendarFormat = this.calendarFormat === 'MM/DD/YY' ? 'DD.MM.YYYY' : 'MM/DD/YY';
-        }  	
+        }
+
+    	this.updateClockCalendarValue(); 	
     }
 
     updateClockCalendarValue () {
@@ -84,6 +88,10 @@ class Model {
 
         if (this.currentValue !== this.container.innerHTML) {
         this.container.innerHTML = this.currentValue;
-    	}
+    	} 
+	}
+
+	interval () {
+		setInterval(() => this.updateClockCalendarValue (), 1000);
 	}
 };

@@ -14,7 +14,7 @@ class PetShopView {
 
     this._createListNode('This is all cats', cats);
     this._createListNode('All pets with price greater than avarage', greaterThanAvaragePrice);
-    this._createListNode('All fluffy pets and white color', fluffyAndWhite)
+    this._createListNode('All fluffy or white pets', fluffyAndWhite)
 
     container.innerHTML = this.template;
 
@@ -46,8 +46,10 @@ class PetShopView {
         list += `<li>${listElement}</li>`
         });
 
-        this.template += `<ul><h3>${title}</h3>
+        this.template += `<div>
+                            <ul><h3>${title}</h3>
                               ${list}
-                          </ul>`;   
+                            </ul>
+                          </div>`;   
     } 
 };

@@ -24,6 +24,7 @@ class View {
 	}
     start () {
         this.model.updateClockCalendarValue ();
+        this.model.interval();
     }
    
 };

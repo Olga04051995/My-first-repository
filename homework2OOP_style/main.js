@@ -5,5 +5,4 @@ document.addEventListener("DOMContentLoaded", function () {
       
     clockCalendar.addEvents();
     clockCalendar.start();
-     setInterval(() => clockCalendar.start(), 500);
 }, false);
