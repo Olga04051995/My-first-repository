@@ -6,7 +6,7 @@ class Pet {
 		this.price = price;
 	}
 
-	whiteOrFluffy() {
+	whiteOrFluffy () {
 		 return this.isYourColor('white') || this.isFluffy();
 	}
 

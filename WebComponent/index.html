@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> Clock-Calendar </title>
+	<meta charset="utf-8">
+
+	<link href="./css/style.css" rel="stylesheet">
+	<script src="./js/view/clockCalendar.com.js"></script>
+	<script src="./js/model/ClockCalendar.js"></script>
+	<script src="./js/main.js"></script>
+</head>
+
+<body>
+	<clock-calendar state='clock' calendarFormat='MM/DD/YY' clockFormat='HH:MM'> </clock-calendar>
+
+	<template id='clockCalendarTemplate'>
+
+		<style>
+			#clock-calendar {
+				color: #00ff00;
+				font-size: 140px;
+				font-weight: bold;
+				margin: 200px 350px;
+				text-align: center;
+				width: 700px;
+				background-color: #000;
+				user-select: none;
+				cursor: pointer;
+			}
+
+			.hover-background {
+				color: #00d9ff !important;
+			}
+		</style>
+		<div id="clock-calendar"></div>
+	</template>
+
+</body>
+
+</html>

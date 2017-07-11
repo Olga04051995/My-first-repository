@@ -1,11 +1,11 @@
 'use strict';
 class PetShopView {
-  constructor(model) {
+  constructor (model) {
     this.petModel = model;
     this.template = '';
   }
 
-  render(selector) {
+  render (selector) {
     let container = document.querySelector(selector);
 
     let cats = this.petModel.getByType(Cat);

@@ -1,21 +1,21 @@
 'use strict'
 class PetShop {
 
-  constructor() {
+  constructor () {
     this.petList = [];
   }
 
-  addPets(pets) {
+  addPets (pets) {
     this.petList = this.petList.concat(pets);
   }
 
-  getByType(type) {
+  getByType (type) {
     return this.petList.filter((value) => {
       return value instanceof type;
     });
   }
 
-  getGreaterThanEvaragePrice() {
+  getGreaterThanEvaragePrice () {
     let avaragePrice = this._getAvaragePrice();
 
     return this.petList.filter((value) => {
@@ -23,17 +23,17 @@ class PetShop {
     });
   }
 
-  getFluffyAndWhite() {
+  getFluffyAndWhite () {
     return this.petList.filter((value) => {
       return value.whiteOrFluffy();
     });
   }
 
-  clearList() {
+  clearList () {
     this.petList = [];
   }
 
-  _getAvaragePrice() {
+  _getAvaragePrice () {
     let summaryPrice = this.petList.reduce((current, next) => {
       return current + next.price;
     }, 0);
