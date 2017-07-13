@@ -2,7 +2,7 @@
 
 class ClockCalendarModel {
 
-	getValue(state, clockFormat, calendarFormat) {
+	getValue (state, clockFormat, calendarFormat) {
 		let result;
 
 		if (state === 'clock') {
@@ -14,7 +14,7 @@ class ClockCalendarModel {
 		return result;
 	}
 
-	getTime(format) {
+	getTime (format) {
 		let result;
 
 		if (format === 'HH:MM') {
@@ -35,7 +35,7 @@ class ClockCalendarModel {
 		return result;
 	}
 
-	getDate(format) {
+	getDate (format) {
 		let result,
 			today = new Date(),
 			day = today.getDate().toLocaleString('en-US', {

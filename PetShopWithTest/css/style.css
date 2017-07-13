@@ -1,0 +1,15 @@
+ul {
+	font-family: "Trebuchet MS", "Lucida Sans";
+	padding: 7px 20px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	box-shadow: 2px -2px 5px 0 rgba(0,0,0,.1),
+     	-2px -2px 5px 0 rgba(0,0,0,.1),
+    	2px 2px 5px 0 rgba(0,0,0,.1),
+    	-2px 2px 5px 0 rgba(0,0,0,.1);
+	font-size: 90%;
+	letter-spacing: 2px;
+	width: 300px;
+	text-align: center;
+}
+

@@ -2,31 +2,31 @@
 
 class ClockCalendar extends HTMLElement {
 
-    get state() {
+    get state () {
         return this.getAttribute('state');
     }
 
-    set state(value) {
+    set state (value) {
         this.setAttribute('state', value);
     }
 
-    get calendarFormat() {
+    get calendarFormat () {
         return this.getAttribute('calendarFormat');
     }
 
-    set calendarFormat(value) {
+    set calendarFormat (value) {
         this.setAttribute('calendarFormat', value);
     }
 
-    get clockFormat() {
+    get clockFormat () {
         return this.getAttribute('clockFormat');
     }
 
-    set clockFormat(value) {
+    set clockFormat (value) {
         this.setAttribute('clockFormat', value);
     }
 
-    attachedCallback() {
+    attachedCallback () {
         this.createShadowRoot().innerHTML = document.querySelector('#clockCalendarTemplate').innerHTML;
         this.$container = this.shadowRoot.querySelector('#clock-calendar');
         this.$model = new ClockCalendarModel();
@@ -35,14 +35,14 @@ class ClockCalendar extends HTMLElement {
         this.start();
     }
 
-    attributeChangedCallback(name, oldValue, newValue) {
+    attributeChangedCallback (name, oldValue, newValue) {
         if (newValue !== oldValue) {
             this[name] = newValue;
             this.updateValue();
         }
     }
 
-    start() {
+    start () {
         this.updateValue();
 
         this.intervalId = setInterval(() => {
@@ -50,7 +50,7 @@ class ClockCalendar extends HTMLElement {
         }, 1000 );
     }
 
-    attachEvents() {
+    attachEvents () {
         this.$container.addEventListener('mouseover', () => {
             this.$container.classList.add("hover-background");
         });
@@ -73,7 +73,7 @@ class ClockCalendar extends HTMLElement {
         }, false);
     }
 
-    updateValue() {
+    updateValue () {
         let newValue = this.$model.getValue(this.state, this.clockFormat, this.calendarFormat);
 
         if (newValue !== this.$oldValue) {
