@@ -14,7 +14,7 @@ class Pet {
 		return;
 	}
 
-	isYourColor (_color) {
-    return this.color === _color;
+	isYourColor (color) {
+ 	   return this.color === color;
 	}	
 };

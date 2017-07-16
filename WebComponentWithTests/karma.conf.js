@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Wed Jul 12 2017 21:50:39 GMT+0300 (FLE Daylight Time)
+// Generated on Thu Jul 13 2017 22:00:08 GMT+0300 (FLE Daylight Time)
 
 module.exports = function(config) {
   config.set({
@@ -15,9 +15,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'js/model/Pet.js',
-      'js/*/*.js',
-      'test/*.js'
+        'js/dateHelper.js',
+        'test/*.js'
     ],
 
 
@@ -29,7 +28,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'js/*/*.js' : ['coverage']
+        'js/dateHelper.js' : ['coverage']
     },
 
 
@@ -37,14 +36,13 @@ module.exports = function(config) {
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['progress', 'coverage'],
-	
+    
     // optionally, configure the reporter
     coverageReporter: {
       type : 'html',
       dir : 'coverage/'
     },
-
-
+    
     // web server port
     port: 9876,
 

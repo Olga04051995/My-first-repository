@@ -12,9 +12,9 @@ class PetShopView {
     let greaterThanAvaragePrice = this.petModel.getGreaterThanEvaragePrice();
     let fluffyAndWhite = this.petModel.getFluffyAndWhite();
 
-    this._createListNode('This is all cats', cats);
-    this._createListNode('All pets with price greater than avarage', greaterThanAvaragePrice);
-    this._createListNode('All fluffy or white pets', fluffyAndWhite)
+    this.createListNode('This is all cats', cats);
+    this.createListNode('All pets with price greater than avarage', greaterThanAvaragePrice);
+    this.createListNode('All fluffy or white pets', fluffyAndWhite);
 
     container.innerHTML = this.template;
 
@@ -38,12 +38,10 @@ class PetShopView {
 
     return ul;
   }*/
-    _createListNode (title, pets) {
+    createListNode (title, pets) {
         let list = '';
-        var listElement;
         pets.forEach((value) => {
-        listElement = value.toString();
-        list += `<li>${listElement}</li>`
+            list += `<li>${value.toString()}</li>`;
         });
 
         this.template += `<div>

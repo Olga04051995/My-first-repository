@@ -1,22 +1,20 @@
 {
-  "name": "homework3",
+  "name": "web-component",
   "version": "1.0.0",
   "description": "",
-  "main": "karma.conf.js",
+  "main": "my.conf.js",
   "directories": {
     "test": "test"
   },
   "dependencies": {
+    "http-server": "^0.10.0",
     "jasmine-core": "^2.6.4",
     "karma": "^1.7.0",
+    "karma-coverage": "^1.1.1",
     "karma-chrome-launcher": "^2.2.0",
-    "karma-jasmine": "^1.1.0",
-    "karma-phantomjs-launcher": "^1.0.4"
+    "karma-jasmine": "^1.1.0"
   },
-  "devDependencies": {
-    "karma": "^1.7.0",
-    "karma-coverage": "^1.1.1"
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
