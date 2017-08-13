@@ -20,7 +20,6 @@ export class PetShopComponent {
 
     constructor () {
         this.petShop = new PetShop();
-
         this.petShop.addPets([new Cat('white', 600, 'Kitty', true),
             new Cat('grey', 400, 'Tom', true),
             new Cat('white', 200, 'Simbad', false),
